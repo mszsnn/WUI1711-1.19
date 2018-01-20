@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+
+//  1.  判断是否为质数
+//function  zhishu(n) {
+//    if(n==1){
+//        n='既不是质数也不是偶数'
+//    }else{
+//        for(let i=2;i<n;i++){
+//           if(n%i==0){
+//               n='不是质数'
+//               break
+//           }else{
+//               n='质数'
+//           }
+//        }
+//    }
+//    console.log(n)
+//}
+//zhishu(4);
+
+//2. 封装一个n*n的惩罚表
+//    function chengfabiao(n) {
+//        for(let i=1;i<=n;i++){
+//            for(let j=1;j<=i;j++){
+//            document.write(i+'×'+j+'='+i*j+'&nbsp')
+//            }
+//            document.write('</br>')
+//        }
+//    }
+//    chengfabiao(4);
+
+
+// 3.  n行m列表格(s为表格内容...) 出不来 ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+//    function biaoge(n,m,s) {
+//        document.write('<table border="1px" cellpadding="0">' )
+//         for(let i=1;i<=n;i++){
+//          document.write('<tr>')
+//             for(let j=1;j<=m;j++){
+//              document.write('<td>s</td>')
+//             }
+//          document.write('</tr>')
+//         }
+//        document.write('</table>')
+//    }
+//    biaoge(3,3,3);
+
+
+//    4.在数组前面添加一个值,n为添加数值，arr数组
+//    function addfirst(arr,n) {
+//        for(let i=arr.length-1;i>=0;i--){
+//            arr[i+1]=arr[i]
+//        }
+//        arr[0]=n;
+//        console.log(arr)
+//    }
+//    addfirst([2,4,1,6],12);
+
+
+
+//    5.删除数组第一个值
+//    function deletefirst(arr) {
+//        for(let i=1;i<arr.length;i++){
+//            arr[i-1]=arr[i]
+//        }
+//        arr.length=arr.length-1
+//        console.log(arr)
+//    }
+//    deletefirst([1,4,1,5,3,4])
+
+
+//   6.移除数组中等于3的元素
+//    function delet3(arr) {
+//        let brr=[];
+//        for(let i=0;i<arr.length;i++){
+//          if(arr[i]!==3){
+//             brr[brr.length]=arr[i]
+//          }
+//        }
+//        console.log(brr)
+//    }
+//    delet3([3,3.5,1,7])
+
+
+// 7.反转数组
+//    function fanzhuan(arr) {
+//        let brr=[];
+//        for(let i=arr.length-1;i>=0;i--){
+//            brr[brr.length]=arr[i]
+//        }
+//        console.log(brr)
+//    }
+//    fanzhuan([3,7,1,5])
+
+
+
+//    8.  找到数组中某一个值的下标
+//    function find(n,arr) {
+//        for(let i=0;i<arr.length;i++){
+//            if (arr[i]==n){
+//                console.log(i)
+//            }
+//        }
+//    }
+//    find(3,[4,3,6,1,76,2,3])
+
+
+//    9.合并两个数组
+//    function hebing(brr,arr) {
+//        for(let i=0;i<arr.length;i++){
+//            brr[brr.length]=arr[i]
+//        }
+//        console.log(brr)
+//    }
+//    hebing([1,4,6,2],[3,6,1,7])
+
+
+////    10.判断数组中所有元素都大于0；
+//    function judge(arr) {
+//        let n='全大于0'
+//        for(let i=0;i<arr.length;i++){
+//          if (arr[i]<=0){
+//              n='不全大于0'
+//              break
+//            }
+//        }
+//        console.log(n)
+//    }
+//    judge([5,8,1,9,3,1])
+    
+//    11. 数组中所有“数字”内容求和 !!!!!!!!!!!!!!!!!!!!!!!!!计算结果错误
+//     function addnumber(arr) {
+//         let sum=0;
+//         for(let i=0;i<arr.length;i++){
+//             if(typeof (arr[i])=='number'){
+//                 sum+=arr[i];
+//             }
+//         }
+//         console.log(sum)
+//     }
+//     addnumber([2,5,1,6,'a','b',6,2])
+
+
+
+
+//    12.输入一个字符或数字在数组尾部
+//     function addlast(arr,n) {
+//         arr[arr.length]=n
+//         console.log(arr)
+//     }
+//     addlast([2,5,2,6,2],'a')
+
+
+
+//    13 找出数组中大于5的个数
+//    function find5(arr) {
+//         let n=0;
+//        for(let i=0;i<arr.length;i++){
+//          if(arr[i]>5)
+//              n++;
+//        }
+//     console.log(n)
+//    }
+//    find5([3,6,2,8,1,4,6])
+
+
+//    14选出数组中大于5的个数组成新数组
+//    function find5content(arr) {
+//         let brr=[]
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]>5){
+//                brr[brr.length]=arr[i]
+//            }
+//        }
+//        console.log(brr)
+//    }
+//    find5content([3,7,98,2,41,1])
+
+//    15复制一个二维数组
+//    function copy(arr) {
+//        let brr=[]
+//        for(let i=0;i<arr.length;i++){
+//
+//            brr[i]=[]
+//            for(let j=0;j<arr[i].length;j++){
+//
+//                brr[i][j]=arr[i][j]
+//            }
+//        }
+//        console.log(brr)
+//    }
+//    copy([[2,5,1,5],[23,6,2]])
+
+
+
+//    16求二维数组的最大值
+//    function findmax(arr) {
+//        let max=arr[0][0]
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr[i].length;j++){
+//                if(arr[i][j]>max){
+//                    max=arr[i][j]
+//                }
+//            }
+//        }
+//        console.log(max)
+//    }
+//findmax([[2,5,1,7],[4,8,2,5]])
+
+
+//    17求二维数组的和
+//    function erweihe(arr) {
+//        let sum=0;
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr[i].length;j++){
+//             sum+=arr[i][j]
+//        }
+//    }
+//    console.log(sum)
+//}
+//erweihe([[2,4,2,7,2],[4,7,2]])
+
+
+//    18 求二维数组最长的组  有相等输出nub，无相等sum
+//function zuichangzu(arr) {
+//    let max=arr[0]
+//    let nub=arr[0]
+//    for(let i=0;i<arr.length;i++){
+//        if(max.length<arr[i].length){
+//            max=arr[i]
+//        }
+//    }
+//    for(let j=0;j<arr.length;j++){
+//        if(max.length==arr[j].length){
+//            nub=arr[j]
+//            console.log(nub)
+//        }
+//    }
+//}
+//zuichangzu([[1,4,2],[3,5,3],[5,2,2]])
+
+
+//    19. 冒泡排序
+//    function maopao(arr,type='desc') {
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr.length-i;j++){
+//                if(type =='asc' ){
+//                    if(arr[i]<arr[j]){
+//                        let n=arr[j]
+//                        arr[j]=arr[i]
+//                        arr[i]=n
+//                    }
+//                }
+//                if (type=='desc'){
+//                    if(arr[i]>arr[j]){
+//                        let n=arr[j]
+//                        arr[j]=arr[i]
+//                        arr[i]=n
+//                    }
+//                }
+//            }
+//        }
+//        console.log(arr )
+//    }
+// maopao([2,5,3,7,3,78])
+
+////  20，选择排序
+//function paixu(arr,type='desc') {
+//    for(let i=0;i<arr.length;i++){
+//        for(j=1+i;j<arr.length;j++){
+//            if(type =='desc' ){
+//                if(arr[i]<arr[j]){
+//                    let n=arr[j]
+//                    arr[j]=arr[i]
+//                    arr[i]=n
+//                }
+//            }
+//            if (type=='asc'){
+//                if(arr[i]>arr[j]){
+//                    let n=arr[j]
+//                    arr[j]=arr[i]
+//                    arr[i]=n
+//                }
+//            }
+//        }
+//    }
+//    console.log(arr)
+//}
+//paixu([1,3,6,2,7,3],'desc');
+
+</script>
+</body>
+</html>
