@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<script>
+    //以关键字function的形式定义函数
+    //封装   选择排序
+    function selectionSort(arr=[],type='asc') {
+        for (let i=0;i<arr.length;i++){
+            for (let j=i+1;j<arr.length;j++){
+                if (type==='desc'){
+                    if (arr[i]<arr[j]){
+                        let tmp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=tmp;
+                    }
+                }else if(type==='asc'){
+                    if (arr[i]>arr[j]){
+                        let tmp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=tmp;
+                    }
+                }
+            }
+        }
+        console.log(type+'选择排序：');
+        console.log(arr);
+        console.log('\n');
+    }
+    let selectionSortCrr=[12,43,3,32,15,7];
+    let selectionSortType='desc';
+    selectionSort(selectionSortCrr);
+
+
+    //封装   冒泡排序
+    function bubbleSort(arr=[],type='asc') {   //asc升序   desc降序
+        for (let i=0;i<arr.length-1;i++){
+            for (let j=0;j<arr.length-1-i;j++){
+                if (type==='desc'){
+                    if (arr[j]<arr[j+1]){
+                        let tmp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=tmp;
+                    }
+                }else if (type==='asc'){
+                    if (arr[j]>arr[j+1]){
+                        let tmp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=tmp;
+                    }
+                }
+            }
+        }
+        console.log(type+'冒泡排序：');
+        console.log(arr);
+        console.log('\n');
+    }
+    let bubbleSortCrr=[12,43,3,32,15,7];
+    let bubbleSortType='desc';
+    bubbleSort(bubbleSortCrr,bubbleSortType);
+
+
+    //求一个二维数组中长度最长的数组
+    function longArr(arr=[]) {
+        if (arr[0] instanceof Array){
+            let long=arr[0],count=1;
+            for (let i=0;i<arr.length;i++){
+                if (arr[i].length>long.length){
+                    long=arr[i];
+                }
+            }
+            console.log('长度最长的数组为：');
+            console.log(long);
+            console.log('\n');
+        }else{
+            console.log('这不是一个二维数组！');
+            console.log('\n');
+        }
+    }
+    let longarr=[[],[1,2,3,4],['a','as','cd']];
+    longArr(longarr);
+
+
+    //求一个二维数组的和
+    function dyadicArrSum(arr=[]) {
+        if (arr[0] instanceof Array){
+            let sum=0;
+            for (let i=0;i<arr.length;i++){
+                for (let j=0;j<arr[i].length;j++){
+                    sum+=arr[i][j];
+                }
+            }
+            console.log('二维数组的和为：'+sum);
+            console.log('\n');
+        }else {
+            console.log('不是一个二维数组');
+            console.log('\n');
+        }
+
+    }
+    let dyadicarr=[[],[1,2,3],[4,5,6,7]];
+    dyadicArrSum(dyadicarr);
+
+
+    //求二维数组中的最大值
+    function dyadicArrMax(arr=[]) {
+        if (arr[0] instanceof Array){
+            let max=arr[0][0];
+            for (let i=0;i<arr.length;i++){
+                for (let j=0;j<arr[i].length;j++){
+                    if (arr[i][j]>max){
+                        max=arr[i][j];
+                    }
+                }
+            }
+            console.log('二维数组中的最大值：'+max);
+            console.log('\n');
+        }else {
+            console.log('不是一个二维数组');
+            console.log('\n');
+        }
+
+    }
+    let dyadicMaxArr=[[22,3,4],[1,2,3],[4,55,6,7]];
+    dyadicArrMax(dyadicMaxArr);
+
+
+    //复制一个二维数组（深复制）
+    function copy(e1,e2) {
+        for (let i=0;i<e1.length;i++){
+            e2[i]=[];
+            for (let j=0;j<e1[i].length;j++){
+                e2[i][j]=e1[i][j];       //深复制，即改变复制后数组中的值，原数组不变
+            }
+        }
+        // e2[0][0]=22;
+        // console.log(e1);
+        console.log('复制后数组为：');
+        console.log(e2);
+        console.log('\n');
+    }
+    let copyArr=[[1,2,3],['a','b','c']];
+    let copyBrr=[];
+    copy(copyArr,copyBrr);
+
+
+    //找出一个数字数组中大于5的数的个数
+    function count(arr=[]) {
+        let count=0;
+        for (let i=0;i<arr.length;i++){
+            if (typeof arr[i]==='number'){
+                if (arr[i]>5){
+                    count++;
+                }
+            }
+        }
+        console.log('数组中大于5的数的个数为：'+count);
+        console.log('\n');
+    }
+    let countArr=['s',21,23,2,3,1,4,5];
+    count(countArr);
+
+
+    //选出一个数组里边大于5的数组成新的数组
+    function newArr(arr=[]) {
+        let brr=[];
+        for (let i=0;i<arr.length;i++){
+            if (typeof arr[i]==='number'){
+                if (arr[i]>5){
+                    brr[brr.length]=arr[i];
+                }
+            }
+        }
+        console.log('数组中大于5的数组成的新数组：');
+        console.log(brr);
+        console.log('\n');
+    }
+    let newarr=['s',21,23,2,33,1,4,5];
+    newArr(newarr);
+
+
+    //输入一个数字或字符，添加在数组的最后
+    function addAfter(str,arr=[]) {
+        arr[arr.length]=str;
+        console.log('添加后：');
+        console.log(arr);
+        console.log('\n');
+    }
+    let str=prompt('请输入要给数组添加的数字或字符');
+    let addAfterArr=[1,2,3];
+    addAfter(str,addAfterArr);
+
+
+    //封装   将数组中数字内容求数组的和
+    function arraySum(arr=[]) {
+        let sum=0;
+        for (let i=0;i<arr.length;i++){
+            if (arr[i] instanceof Array){  //instanceof Array检测是否为一个数组
+                for (let j=0;j<arr[i].length;j++){
+                    if (typeof arr[i][j]==='number'){
+                        sum+=arr[i][j];
+                    }
+                }
+            }else {
+                if (typeof arr[i]==='number'){
+                    sum+=arr[i];
+                }
+            }
+        }
+        console.log("数组中数字内容和为："+sum);
+        console.log('\n');
+    }
+    let sumArr=[1,2,10,'a','b','c'];
+    arraySum(sumArr);
+    /*let sumbrr=[[1,2,3],['a','b','c'],[true,false],[32,2]];
+    sum(sumbrr);*/
+
+
+    //判断数组中是否所有数字都大于0  
+    function greater(arr=[]) {
+        let flag='都大于0';
+        for (let i=0;i<arr.length;i++){
+            if (arr[i]<=0){
+                flag = '不全都大于0';
+                break;
+            }
+        }
+        console.log(flag);
+        console.log('\n');
+    }
+    let greaterarr=[1,2,3,-1,0];
+    greater(greaterarr);
+
+
+    //合并两个数组
+    function merge(arr=[],brr=[]) {
+        let crr=[];
+        for (let i=0;i<arr.length;i++){
+            crr[crr.length]=arr[i];
+        }
+        for (let j=0;j<brr.length;j++){
+            crr[crr.length]=brr[j];
+        }
+        console.log('合并后为：');
+        console.log(crr);
+        console.log('\n');
+    }
+    let mergeArr=[1,23,3],mergeBrr=['a','b','c'];
+    merge(mergeArr,mergeBrr);
+
+
+    //找到数组中某一个值的下标
+    function findIndex(str,arr=[]) {
+        console.log('下标为：');
+        for (let i=0;i<arr.length;i++){
+            if (arr[i]===str){
+
+                console.log(i);
+            }
+        }
+        console.log('\n');
+    }
+    let findstr=1;
+    let findArr=['q',23,1,43,1];
+    findIndex(findstr,findArr);
+
+
+    //将数组反转
+    function reversal(arr=[]) {
+        for (let i=0;i<arr.length/2;i++){  //只需要循环前半部分，使前半部分和后半部分对换
+            let tmp=arr[i];
+            arr[i]=arr[arr.length-1-i];
+            arr[arr.length-1-i]=tmp;
+        }
+        console.log('反转后：');
+        console.log(arr);
+        console.log('\n');
+    }
+    let reversalArr=[1,2,3,4,5];
+    reversal(reversalArr);
+
+
+    //移除数组中等于3的元素
+    function removeArr(arr=[],str=3) {
+        let brr=[];
+        for (let i=0;i<arr.length;i++){
+            if (arr[i]===3){
+                continue;
+            }else {
+                brr[brr.length]=arr[i];
+            }
+        }
+        console.log('移除后数组为：');
+        console.log(brr);
+        console.log('\n');
+    }
+    let removerArray=[1,'kj',3,43,3,true];
+    removeArr(removerArray);
+
+
+    //删除数组的第一个值    后边的元素往前移，再缩小数组长度
+    function deleteFirst(arr=[]) {
+        for (let i=1;i<arr.length;i++){    //小标i不能小于0，所以i不能为0
+            arr[i-1]=arr[i];
+        }
+        arr.length=arr.length-1;
+        console.log('删除第一个元素后：');
+        console.log(arr);
+        console.log('\n');
+    }
+    let deleteArr=[1,2,3,4];
+    deleteFirst(deleteArr);
+
+
+    //在数组的前面添加一个值   后边的元素往后移动，再给arr[0]赋值
+    function addFirst(str,arr=[]) {
+        for (let i=arr.length-1;i>=0;i--){
+            arr[i+1]=arr[i];
+        }
+        arr[0]=str;
+        console.log('添加后数组：');
+        console.log(arr);
+        console.log('\n');
+    }
+    let addStr='asd',addArr=[2,3,4];
+    addFirst(addStr,addArr);
+
+
+    //封装一个n行m列的表格
+    function table(n,m) {
+        document.write('<table>');
+        for (let i=1;i<=n;i++){
+            document.write('<tr>');
+            for (let j=1;j<=m;j++){
+                document.write('<td></td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    }
+    table(3,7);
+
+
+    //封装n*n的乘法表  
+    function multiplication(n) {
+        for (let i=1;i<=n;i++){
+            for (let j=1;j<=i;j++){
+                document.write(j+'*'+i+'='+i*j+'&nbsp;&nbsp;&nbsp;');
+            }
+            document.write('<br/>');
+        }
+    }
+    multiplication(14);
+
+
+    //输入一个数判断是不是质数
+    function prime(nub) {
+        let flag='是质数';
+        if (isNaN(nub)){
+            console.log('请输入数字');
+            console.log('\n');
+        }else {
+            for (let i=2;i<nub-1;i++){
+                if (nub%i===0){
+                    flag='不是质数';
+                }
+            }
+            console.log(flag);
+            console.log('\n');
+        }
+    }
+    let primeNub=prompt('请输入一个要判断是否为质数的数字：');
+    prime(primeNub);
+
+
+    //封装  截取一个数组，截取下标为a到b的范围
+    function slice(arr,a,b) {
+        let brr=[];
+        if (a<0){
+            a=0;
+        }
+        if (b>arr.length-1){
+            b=arr.length-1;
+        }
+        for (let i=0;i<arr.length;i++){
+            if (i>=a && i<=b){
+                brr[brr.length]=arr[i];
+            }
+        }
+        console.log('截取后数组为：');
+        console.log(brr);
+        console.log('\n');
+    }
+    let sliceArr=[1,2,23,1,43,'ds','d',true,43],a=3,b=7;
+    //let a=-3,b=10;
+    slice(sliceArr,a,b);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<style>
+    table{
+        width: auto;
+        height: auto;
+        margin:50px auto;
+        border-collapse: collapse;
+    }
+    td{
+        width: 50px;
+        height: 50px;
+        border: 1px solid rebeccapurple;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+</style>
+<body>
+
+</body>
+</html>
