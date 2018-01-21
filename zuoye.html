@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//     选择
+            function fun(arr){
+                let tmp;
+                for (let i=0;i<arr.length;i++){
+                    for(let j=i+1;j<arr.length;j++){
+                        if(arr[i]>arr[j]){
+                            tmp=arr[i];
+                            arr[i]=arr[j];
+                            arr[j]=tmp;
+                        }
+                    }
+                }console.log(arr);
+            }
+            fun([1,3,5,10,9]);
+
+//    冒泡
+            function mp(arr){
+                 for (let i=0; i<arr.length; i++){
+                     for (let j=0; j< arr.length-i-1; j++){
+                     if (arr[j]> arr[j+1]){
+                         let tmp=arr[j+1];
+                          arr[j+1]=arr[j];
+                          arr[j]= tmp;
+                         }
+                     }
+                 }
+                 console.log(arr);
+            }
+            let arr=[1,3,5,10,9,8,6];
+            mp(arr);
+
+//求一个二位数中最长的数组
+             function max(arr){
+                 let max=arr[0];
+                 for( let i=0;i<arr.length;i++){
+                     if(max.length<arr[i].length){
+                         max=arr[i];
+                     }
+                 }
+                 console.log(max);
+             }
+             max([[1,2,3],[4,5,6,7]]);
+
+//求二维数组的和
+             function sum(arr) {
+                 let a=0;
+                 for (let i=0;i<arr.length;i++){
+                     for (let j=0;j<arr[i].length;j++){
+                         a+=arr[i][j];
+                     }
+                 }
+                 console.log(a);
+             }
+             sum([[10,28,3],[4,5,6,7]]);
+
+//求一个二维数组最大值
+              function zd(arr) {
+                let max=[0];
+                    for( let i=0;i<arr.length;i++){
+                        for(let j=0;j<arr[i].length;j++){
+                            if(max<arr[i][j]){
+                                max=arr[i][j];
+                            }
+                        }
+                    }
+                   console.log(max);
+              }
+              zd([[1,2,3],[4,5,6,7,15]]);
+
+//复制二维数组
+              function copy(arr){
+                  let brr=[];
+                  for (let i=0;i<arr.length;i++){
+                      brr[i]=[];
+                      for(let j=0;j<arr[i].length;j++){
+                          brr[i][j]=arr[i][j];
+                      }
+                  }
+                  console.log(brr);
+              }
+              copy([[1,2,3],[4,5,6,7]]);
+
+//找一个数字数组大于5的数的个数
+              function dy3(arr) {
+                  for( i=0;i<arr.length;i++){
+                      if(arr[i]>5){
+                         console.log(arr[i]);
+                      }
+                  }
+              }
+              dy3([1,3,6,123]);
+
+//选出大于5的数 组成新的数组
+              function dy2(arr) {
+                let brr=[];
+                let n=0;
+                    for(let i=0;i<arr.length;i++){
+                        if(arr[i]>5){
+                            brr[n]=arr[i];
+                            n++;
+                        }
+                    }
+                    console.log(brr);
+              }
+              dy2([1,2,2,2,5,5,12,3,12,3,123,6,123]);
+//
+
+//输入一个数字添加到数组最后
+              function tj(arr,n) {
+                  arr[arr.length]=n;
+                  console.log(arr);
+              }
+              tj([1,2,5,12,3,6,123],'abd');
+
+//将数组中数字内容求和
+             function sum1(arr) {
+                 let a=0;
+                 for (let i=0;i<arr.length;i++){
+                     for (let j=0;j<arr[i].length;j++){
+                         a+=arr[i][j];
+                     }
+                 }
+                 console.log(a);
+             }
+             sum1([[1,2,3],[4,5,6,7,89]]);
+
+//判断数组中所有数字是否大于0
+             function pd(arr){
+               let n='大于0';
+               for(let i=0;i<arr.length;i++){
+                   if(arr[i]<0){
+                      n='小于等于0';
+                      break;
+                   }
+                }
+                console.log(n);
+             }
+             pd([7,8,9,-1]);
+
+//合并两个数组
+            function hb(arr,brr){
+                  for(let i=0;i<arr.length;i++){
+                     brr[brr.length]=arr[i];
+                  }
+                  console.log(brr);
+            }
+            hb([7,8,9],[1,2,5,12,3,6,123]);
+
+//找到数组中某一个值的下标
+            function zc(arr) {
+               for(let i=0;i<arr.length;i++){
+                   if(arr[i]==9){
+                       console.log(i);
+                    }
+               }
+            }
+            zc([7,8,9,5]);
+
+//将数组反转
+            function fz(arr){
+               let b=[];
+               for(let i=arr.length-1;i>=0;i--){
+                  b[b.length]=arr[i];
+               }
+               console.log(b);
+            }
+            fz([7,8,9,5]);
+
+//移除数组中等于3的元素
+            function yc(arr){
+               let b=[];
+               for (let i=0;i<arr.length;i++){
+                  if(arr[i]==3){
+                      continue;
+                  }b[b.length]=arr[i];
+               }
+               console.log(b);
+            }
+            yc([3,7,8,9,5]);
+
+//删除数组的第一个值
+            function sc(arr) {
+                 for (let i=1;i<arr.length;i++){
+                    arr[i-1]=arr[i];
+                 }
+                 arr.length=arr.length-1;
+                 console.log(arr);
+            }
+            sc([89,3,7,8,9,5]);
+
+//在数组的前面填一个值
+            function tj1(arr){
+                 for (let i=arr.length-1;i>=0;i--){
+                     arr[i+1]=arr[i];
+                 }
+                 arr[0]=152;
+                 console.log(arr);
+            }
+            tj1([3,7,8,9,5]);
+
+//封装一个n行m列的表格
+             function tab(n,m) {
+                 document.write('<table cellspacing="0" cellpadding="0" border="1" ' +
+                      'width="300" height="300">');
+                    for (let c=0;c<10;c++){
+                        if(c%2!=0){
+                            document.write('<tr>');
+                        }else{
+                            document.write('<tr>');
+                        }
+                        for (let d=0;d<10;d++){
+                            document.write('<td></td>');
+                        }
+                        document.write('</tr>');
+                    }
+                  document.write('</table>');
+             }
+             tab(10,10);
+
+//n*n的乘法表
+             function cf(n,n){
+                 for(let a=1;a<=10;a++){
+                      for(let b=1;b<=10;b++){
+                          document.write(a+'*'+b+'='+a*b+'&nbsp;&nbsp;&nbsp;');
+                          if(a==b){
+                              document.write('</br>');
+                              break;
+                          }
+                      }
+                 }
+             }
+             cf(10,10);
+
+//判断一个数是不是质数
+             function pd1(nubw){
+                 let nub=prompt('请输入一个数字');
+                 let flag='是质数';
+                    for (let i=2;i<nub;i++){
+                        if(nub%i == 0){
+                            flag = '不是质数';
+                        }
+                    }
+                    if(nub==1){
+                            console.log('既不是质数也不是合数');
+                    }else{
+                            console.log(flag);
+                    }
+             }
+             let nubw;
+             pd1(nubw);
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
