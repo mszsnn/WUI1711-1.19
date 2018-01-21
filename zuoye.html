@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    //    1.选择排序
+    {
+        function fn(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] < arr[j]) {
+                        let npm = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = npm;
+                    }
+                }
+            }
+            console.log(arr)
+        }
+
+        let brr = [1, 2, 3, 2, 4, 5, 6, 7, 82, 19];
+        fn(brr);
+    }
+    //    2.冒泡
+    {
+        function fn(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length - i; j++) {
+                    if (arr[j] < arr[j + 1]) {
+                        let npm = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = npm;
+                    }
+                }
+            }
+            console.log(arr);
+        }
+
+        let brr = [1, 4, 3];
+        fn(brr);
+    }
+    //    3.二维数组长度最长
+    {
+        function fn(arr) {
+            let max = arr[0];
+            for (i = 0; i < arr.length; i++) {
+                if (max.length < arr[i].length) {
+                    max = arr[i]
+                }
+            }
+            console.log(max);
+        }
+
+        let brr = [[1, 2], [1, 2, 3]];
+        fn(brr);
+    }
+    //    4.二维数组的和
+    {
+        function fn(arr) {
+            let sum = 0;
+            for (i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    sum += arr[i][j];
+                }
+            }
+            console.log(sum);
+        }
+
+        let brr = [[1, 2], [1, 2, 3]];
+        fn(brr);
+    }
+    //    5.二维数组的最大值
+    {
+        function fn(arr) {
+            let brr = arr[0][0];
+            for (i = 0; i < arr.length; i++) {
+                for (j = 0; j < arr[i].length; j++) {
+                    if (brr < arr[i][j]) {
+                        brr = arr[i][j];
+                    }
+                }
+            }
+            console.log(brr);
+        }
+
+        let crr = [[1, 2], [1, 2, 3]];
+        fn(crr);
+    }
+    //    6.复制一个二维数组
+    {
+        function fn(arr) {
+            let crr = [];
+            for (let i = 0; i < arr.length; i++) {
+                crr[i] = [];
+                for (let j = 0; j < arr[i].length; j++) {
+                    crr[i][j] = arr[i][j]
+                }
+            }
+            console.log(crr);
+        }
+
+        let brr = [[1, 2], [1, 2, 3]];
+        fn(brr)
+    }
+    //    7.找一个数组大于5的个数
+    {
+        function fn(arr){
+            let count=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i] instanceof Array){
+                    for(j=0;j<arr[i].length;j++){
+                        if(arr[i][j]>5){
+                            count++;
+                        }
+                    }
+                }else{
+                    if(arr[i]>5){
+                        count++;
+                    }
+                }
+            }
+            console.log(count);
+        }
+        let crr = [1, 2, 3, 2, 4, 6, 7];
+        fn(crr);
+    }
+    //    8.找一个数组大于5的个数，组成一个新的数组
+    {
+        function fn(arr){
+            let brr=[];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i] instanceof Array){
+                    brr[i]=[];
+                    for(let j=0;j<arr[i].length;j++){
+                        if(arr[i][j]>5){
+
+                            brr[i][brr[i].length]=arr[i][j];
+                        }
+                    }
+                }else{
+                    if(arr[i]>5){
+                        brr[brr.length]=arr[i];
+                    }
+                }
+            }
+            console.log(brr)
+        }
+        let crr = [1, 2, 3, 2, 4, 6, 7];
+        fn(crr);
+    }
+    //    9.输入一个数字或字符添加到数组最后
+//    {
+//        function fn(arr,a){
+//            let flag="一维";
+//            let i;
+//            for(i=0;i<arr.length;i++){
+//                if(arr[i] instanceof Array){
+//
+//                    flag="二维";
+//                }else{
+//                    flag="一维";
+//                }
+//            }
+//            if(flag=="二维"){
+//                arr[i]=[];
+//                arr[i][0]=a;
+//
+//            }else{
+//                arr[arr.length]=a;
+//            }
+//            console.log(arr,flag);
+//        }
+//        fn(a,b)
+//    }
+    //    10.将数组中的数字内容求和
+    {
+        function fn(arr) {
+            let brr = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof(arr[i]) === 'number') {
+                    brr += arr[i]
+                }
+            }
+            console.log(brr);
+        }
+
+        let crr = [1, 2, 3, 2, 4, 6, 7, 82, 1, "x"];
+        fn(crr);
+    }
+    //    11.判断数组中是否所有数字都大于0
+    {
+        function fn(arr){
+            let flag='都大于0';
+            for(let i=0;i<arr.length;i++){
+                if(arr[i] instanceof Array){
+                    for(j=0;j<arr[i].length;j++){
+                        if(typeof(arr[i][j])=='number'){
+                            if(arr[i][j]<=0){
+                                flag="不全大于0";
+                                break;
+                            }
+                        }
+                    }
+                }else{
+                    if(typeof(arr[i])=='number'){
+                        if(arr[i]<0){
+                            flag="不全大于0";
+                            break;
+                        }
+                    }
+                }
+                if(flag=='不全大于0'){break;}
+            }
+            console.log(flag);
+        }
+        var brr = [32, 12, 52, 87, 96, 56];
+        fn(brr)
+
+    }
+    //    12.合并两个数组
+    {
+        function fn(arr, drr) {
+            for (let i = 0; i < drr.length; i++) {
+                arr[arr.length] = drr[i];
+            }
+            console.log(arr)
+        }
+
+        let a = [1, 2, 3, 2];
+        let d = [4, 6, 7, 82, 1];
+        fn(a, d);
+    }
+    //    13.找到数组中某一个值的下标
+    {
+        var arr = [32, 12, 52, 87, 96, 56];
+
+        function fn(arr, num) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == num) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        console.log(fn(arr, 3));
+    }
+    //    14.将数组翻转
+    {
+        function fn(arr) {
+            for (let i = 0; i <= arr.length / 2; i++) {
+                let npm = arr[i];
+                arr[i] = arr[arr.length - 1 - i];
+                arr[arr.length - 1 - i] = npm;
+            }
+            console.log(arr);
+        }
+
+        let brr = [1, 2, 3, 4, 5];
+        fn(brr);
+    }
+    //    15.移除数组中=3的元素
+    {
+        function fn(arr) {
+            let brr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== 3) {
+                    brr[brr.length] = arr[i];
+                }
+            }
+            console.log(brr);
+        }
+
+        let crr = [1, 2, 3, 2, 4];
+        fn(crr);
+    }
+    //    16.删除数组第一个值
+    {
+        function fn(arr) {
+            let brr = [];
+            for (let i = 1; i < arr.length; i++) {
+                brr[brr.length] = arr[i]
+            }
+            console.log(brr);
+        }
+
+        let crr = [1, 2, 3, 2, 4, 5];
+        fn(crr);
+    }
+    //    17.在数组的前面去添加一个值
+    {
+        function fn(arr) {
+            let brr = "a";
+            for (let i = arr.length - 1; i >= 0; i--) {
+                arr[i + 1] = arr[i]
+            }
+            arr[0] = brr;
+            console.log(arr);
+        }
+
+        let crr = [1, 2, 3, 2, 4, 5];
+        fn(crr);
+    }
+    //    18.n行m列的表格
+    {
+        function fn(n, m) {
+            var a = '<table border="1px" width="300px" height="300px"  cellspacing="0">';
+            for (var rows = 1; rows <= n; rows++) {
+                a += '<tr>';
+                for (var lies = 1; lies <= m; lies++) {
+                    a += '<th>';
+                    a += '</th>';
+                }
+                a += '</tr>';
+            }
+            ;
+            a += '</table>';
+            return a;
+        }
+
+        document.write(fn(2, 3));
+    }
+    //    19.n*n的乘法表
+    {
+        function fn(n) {
+            for (i = 1; i <= n; i++) {
+                for (j = 1; j <= i; j++) {
+                    document.write(i + "x" + j + "=" + i * j + " ");
+                }
+                document.write("<br/>")
+            }
+        }
+
+        fn(5)
+    }
+    //    20.输入一个数判断是否是质数
+//    function zhishu(n){
+//        for(let i=1;i<n;i++){
+//            if(n%1==0&&n%n==0){
+//                console.log(n是质数)
+//            }else{
+//                console.log(n不是质数)
+//            }
+//        }
+//    }
+//    fn(3)
+</script>
+</html>
