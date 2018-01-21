@@ -1,0 +1,266 @@
+
+1冒泡
+function maopao(arr,shunxu='s') {
+    for(let i=0;i<arr.length;i++){
+        for(let j=0;j<arr.length;j++){
+            if(shunxu=='s'){
+                if(arr[j]>arr[j+1]){
+                    let tmp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=tmp;
+                }
+            }
+            else if(shunxu=='j'){
+                if(arr[j]<arr[j+1]){
+                    let tmp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=tmp;
+                }
+            }
+
+        }
+    }
+    console.log(arr);
+}
+
+
+2选择
+function xuanze(arr,shunxu='s') {
+    for(let i=0;i<arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            if(shunxu=='s'){
+                if(arr[i]>arr[j]){
+                    let tmp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=tmp;
+                }
+            }
+            else if(shunxu='j'){
+                if(arr[i]<arr[j]){
+                    let tmp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=tmp;
+                }
+            }
+        }
+    }
+    console.log(arr);
+}
+
+
+3二维中最长的
+function erweizuichang(arr) {
+    for(let i=0;i<arr.length-1;i++){
+        if(arr[i].length>arr[i+1].length){
+            let tmp=arr[i];
+            arr[i]=arr[i+1];
+            arr[i+1]=tmp;
+        }
+    }
+    console.log(arr[arr.length-1]);
+}
+
+
+4二维数组和
+function erweishuzuhe(arr) {
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        for(let j=0;j<arr[i].length;j++){
+            sum+=arr[i][j];
+        }
+    }
+    console.log(sum);
+}
+
+
+5二维中最大值
+function erweimax(arr) {
+    let max=arr[0][0]
+    for(let i=0;i<arr.length;i++){
+        for(let j=0;j<arr[i].length;j++){
+            if(arr[i][j]>max){
+                max=arr[i][j]
+            }
+        }
+    }
+    console.log(max)
+}
+
+
+6复制二维数组
+function copyerwei(arr){
+    let brr=[];
+    for(let i=0;i<arr.length;i++){
+        brr[i]=[];
+        for(let j=0;j<arr[i].length;j++){
+           brr[i][j]=arr[i][j]
+        }
+    }
+    console.log(brr)
+}
+
+
+7找出大于5的数
+function dayu5(arr) {
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>5){
+            console.log(arr[i]);
+        }
+    }
+}
+
+
+8大于5组成新数组
+function dayu5xinshuzu(arr) {
+    let brr=[];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>5){
+            brr[brr.length]=arr[i];
+        }
+    }
+    console.log(brr);
+}
+
+
+9加在最后
+function addlast(arr) {
+    arr[arr.length]=parseInt(prompt());
+    console.log(arr);
+}
+
+
+10求数组中数字的和
+function shuziqiuhe(arr) {
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        if(typeof arr[i]=='number'){
+            sum+=arr[i]
+        }
+        else{
+            continue;
+        }
+    }
+    console.log(sum);
+}
+
+
+11都大于0
+function doudayu0(arr) {
+    let flag='都大于零'
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]<=0){
+            flag='不是都大于零';
+        }
+    }
+    console.log(flag);
+}
+
+
+12合并俩数组
+function hebing2shuzi(arr,brr) {
+    let crr=[];
+    for(let i=0;i<arr.length;i++){
+        crr[crr.length]=arr[i];
+    }
+    for(let j=0;j<brr.length;j++){
+        crr[crr.length]=brr[j];
+    }
+    console.log(crr);
+}
+
+
+13找下标
+function zhaoxiabiao(arr){
+    let flag=parseInt(prompt('请输入查找的数字：'));
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]===flag){
+            console.log(i);
+        }
+    }
+}
+
+
+14反转
+function fanzhuan(arr) {
+    let brr=[];
+    for(let i=arr.length-1;i>=0;i--){
+        brr[brr.length]=arr[i];
+    }
+    console.log(brr);
+}
+
+
+15移除数组中的3
+function yichu3(arr) {
+    for(let i=arr.length-1;i>=0;i--){
+        if(arr[i]===3){
+            for(let j=i;j<arr.length;j++){
+                arr[j]=arr[j+1];
+            }
+            arr.length-=1;
+        }
+    }
+    console.log(arr);
+}
+
+
+16删除第一个值
+function shanyi(arr) {
+    for(let i=0;i<arr.length;i++){
+        arr[i]=arr[i+1];
+    }
+    arr.length-=1;
+    console.log(arr);
+}
+
+
+17数组前加一个值
+function qianjiayi(arr,nub) {
+    for(let i=arr.length-1;i>=0;i--){
+        arr[i+1]=arr[i]
+    }
+    arr[0]=prompt('请输入第一个值：');
+    nub=arr[0];
+    console.log(arr)
+}
+
+
+18 n行m列表格
+function biaoge(n,m) {
+    document.write('<table border="1" cellspacing="0"' +
+        ' align="center" width="300" height="150">');
+    for(let i=0;i<n;i++){
+        document.write('<tr>');
+        for(let j=0;j<m;j++){
+            document.write('<td></td>');
+        }
+    }
+    document.write('</tr>');
+    document.write('</table>');
+}
+
+
+19乘法表
+function chengfabiao(n) {
+    for(let i=1;i<=n;i++){
+        for(let j=1;j<=i;j++){
+            document.write(i+'*'+j+'='+i*j+'&nbsp;&nbsp;');
+        }
+        document.write('</br>');
+    }
+}
+
+
+20是否为质数
+function zhishu(n) {
+    let tmp='是质数';
+    if(n===1){
+        tmp='这是1';
+    }
+    for(let i=2;i<n;i++){
+        if(n%i===0){
+            tmp='不是质数';
+        }
+    }
+    console.log(tmp);
+}
