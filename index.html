@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//    1、选择排序
+//    function xzpx(arr) {
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=i+1;j<arr.length;j++){
+//                if(arr[i]>arr[j]){
+//                    let temp=arr[i];
+//                    arr[i]=arr[j];
+//                    arr[j]=temp;
+//                }
+//            }
+//        }
+//        console.log(arr);
+//    }
+//    xzpx([1,15,5,8,21]);
+
+
+
+//    2、冒泡排序
+//    function mppx(arr,type) {
+//        for (let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr.length-1-i;j++){
+//                if(type='asc')
+//                    if (arr[j]>arr[j+1]){
+//                        let temp=arr[j];
+//                        arr[j]=arr[j+1];
+//                        arr[j+1]=temp;
+//                    }
+//                if(type='desc')
+//                    if (arr[j]<arr[j+1]){
+//                        let temp=arr[j];
+//                        arr[j]=arr[j+1];
+//                        arr[j+1]=temp;
+//                    }
+//            }
+//        }
+//        console.log(arr)
+//     }
+//    mppx([5,9,2,6,7]);
+
+
+//    3、求一个二维数组中长度最长的数组
+//    function zcsz(arr){
+//        let max=arr[0];
+//        for (let i=1;i<arr.length;i++){
+//            if(max.length<arr.length){
+//                max[i]=arr[i]
+//            }
+//        }
+//        console.log(max);
+//    }
+//    zcsz([[5,4,3,2,1],['a','b']]);
+
+
+
+//    4、求和
+//    function qiuhe(arr){
+//        let sum=0;
+//        for (let i=0;i<arr.length;i++){
+//            sum+=arr[i]
+//        }
+//        console.log(sum);
+//    }
+//     qiuhe([5,9,2,6,7])
+
+
+
+
+//    5、求一个二维数组的最大值
+//   function zdz(arr){
+//       let max=0;
+//       for (let i=0;i<arr.length;i++){
+//           for(let j=0;j<arr.length;j++){
+//               if(max<arr[i][j]){
+//                   max=arr[i][j]
+//               }
+//           }
+//       }
+//       console.log(max);
+//   }
+//   zdz([[5,4,3,2,1],[2,9]]);
+
+
+//   6、复制一个二维数组
+//   function fz(arr){
+//      let brr=[];
+//       for (let i=0;i<arr.length;i++){
+//          for(let j=0;j<arr.length;j++){
+//               brr[i]=arr[i];
+//           }
+//       }
+//       console.log(brr);
+//   }
+//   fz([[5,4,3,2,1],[2,9]]);
+
+
+
+//   7、找出一个数字数组里面大于5的数，组成一个新的数组
+//    function zc(arr){
+//        let brr=[];
+//        for (let i=0;i<arr.length;i++){
+//            if(arr[i]>5){
+//               brr[i]=arr[i];
+//            }
+//        }
+//        console.log(brr)
+//    }
+//    zc([9,6,3,2,1]);
+
+
+//  8、输入一个数字或者是字符添加到数组最后
+//   function tjzh(arr){
+//       let sr=prompt('请输入数字');
+//       arr[arr.length]=sr;
+//       console.log(arr);
+//   }
+//   tjzh([1,2,3,4,5,6,7,8,9])
+
+
+//   9、将数组中的数字内容求和
+//   function nrqh(arr){
+//       let sum=0;
+//       for (let i=0;i<arr.length;i++){
+//            sum+=arr[i]
+//        }
+//        console.log(sum);
+//    }
+//     nrqh([5,9,2,6,7])
+
+
+//   10、判断数组中是否所有数字都是大于0
+//   function sfzy(arr){
+//       let flang='都大于';
+//       for(let i=0;i<arr.length;i++){
+//           if(arr[i]<0){
+//               flang='都小于'
+//               break;
+//           }
+//       }
+//       console.log(flang);
+//   }
+//   sfzy([1,2,3,4,5,6,7,8,9]);
+
+
+
+//    11、合并两个数组
+//    function heb(arr) {
+//        for (let i=0;i<arr.length;i++){
+//            arr[arr.length]=brr[i];
+//        }
+//        console.log(arr);
+//    }
+//    heb([1,2,3,4,5,6,7,8,9],[50,51]);
+
+
+//    12、找到数组中某一个值的所有下标
+//    function zc(arr) {
+//        for (let i=0;i<arr.length;i++){
+//            for (let j=0;j<arr.length;j++){
+//                brr[j]=arr[i];
+//            }
+//        }
+//        console.log(brr);
+//    }
+//    zc([1,5,6,8]);
+
+
+//    13、将数组反转
+//    function sfz(arr) {
+//       for (let i=0;i<arr.length/2;i++){
+//           let tmp=arr[i];
+//            arr[i]=arr[arr.length-1-i];
+//            arr[arr.length-1-i]=tmp;
+//       }
+//       console.log(arr);
+//    }
+//    sfz([1,2,3,4]);
+
+
+//    14、移除数组中等于3的元素
+//   function yc(arr){
+//       let brr=[]
+//       for (let i=0;i<arr.length;i++){
+//           if(arr[i]!=3){
+//               brr[brr.length]=arr[i];
+//           }
+//       }
+//       console.log(brr);
+//   }
+//   yc([1,2,3,4,5,6,7,8,9]);
+
+
+//    15、删除数组中的第一个值
+//    function scdyg(arr) {
+//       for (let i=1;i<arr.length;i++){
+//           arr[i-1]=arr[i];
+//       }
+//       arr.length=arr.length-1;
+//       console.log(arr);
+//    }
+//    scdyg([1,2,3,4,5,6,7,8,9]);
+
+
+//    16、在数组的前面添加一个值
+//    function qtjz(arr) {
+//        for (let i=arr.constructor-1;i>=0;i--){
+//            arr[i+1]=arr[i]
+//        }
+//        arr[0]=88;
+//        console.log(arr);
+//    }
+//    qtjz([1,2,3,4,5,6,7,8,9]);
+
+
+//    17、封装一个n行m列的表格
+//    function bg(n,m) {
+//        document.write('<table width="700" height="500" border=1 cellspacing="0" cellpadding="0">');
+//        for(let i=1;i<==n;i++){
+//            if(i%2===0){
+//            }else {
+//                document.write('</tr>')
+//            }
+//            for(let n=0;n<=m;n++){
+//                document.write('<td></td>');
+//            }
+//            document.write('</tr>');
+//        }
+//        document.write('</table>');
+//    }
+//    bg(9,2);
+
+
+//    18、封装n*n的乘法表
+//    function cfb(n,m) {
+//        document.write('<table width="700" height="500" border=1 cellspacing="0" cellpadding="0">');
+//        for(let i=1;i<=n;i++){
+//            if(i%2===0){
+////                document.write('<tr bgcolor="red">')
+//            }else {
+//                document.write('</tr>')
+//            }
+//            for(let n=0;n<=m;n++){
+//                document.write('<td></td>');
+//            }
+//            document.write('</tr>');
+//        }
+//        document.write('</table>');
+//    }
+//    cfb(5,5)
+
+//    19、输入一个数是不是质数
+//    function pd() {
+//        let result=prompt('输入一个数字');
+//        if(result!=2){
+//            console.log('是质数');
+//        }else{
+//            console.log('不是质数')
+//        }
+//    }
+//    pd();
+
+
+</script>
+
+</body>
+</html>
