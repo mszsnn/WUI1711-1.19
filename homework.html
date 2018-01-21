@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework</title>
+</head>
+<script>
+
+<!--1.选择排序-->
+    function chose(arr,type='asc'){
+        for(let i=0;i<arr.length-1;i++){
+            for(let j=0;j<arr.length-1-i;j++){
+                if(type=='asc'){
+                    if(arr[j]>arr[j+1]){
+                        let tmp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=tmp;
+                    }
+                }
+                if(type=='dsc'){
+                    if(arr[j]<arr[j+1]){
+                        let tmp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=tmp;
+                    }
+                }
+            }
+        }
+        document.write('选择排序'+type+'：'+arr+'</br></br>');
+    }
+    chose([1,2,2,3,4,44,4,3,52,6675,676,5,6,5,4,5,65,4],'asc');
+
+<!--2.冒泡排序-->
+    function bubble(arr,type='asc') {
+        for(let i=0;i<arr.length-1;i++){
+            for(let j=i+1;j<arr.length;j++){
+                if(type=='asc'){
+                    if(arr[i]>arr[j]){
+                        let tmp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=tmp;
+                    }
+                }
+                if(type=='dsc'){
+                    if(arr[i]<arr[j]){
+                        let tmp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=tmp;
+                    }
+                }
+            }
+        }
+        document.write('冒泡排序'+type+'：'+arr+'</br></br>');
+    }
+    bubble([77,6655,887,565,2,4453,65,12,33],'dsc');
+
+<!--3.求二维数组中最长的数组-->
+    function MaxLength(arr) {
+        let max=arr[0];
+        for(let i=0;i<arr.length;i++){
+            if(arr[i].length>max.length){
+                max=arr[i];
+            }
+        }
+        document.write('二维数组中最长的数组是:'+max+'</br></br>');
+    }
+    MaxLength([[1,2,3,4],[4,4,5,5,64,3],[2,3],[6,64,52]]);
+
+<!--4.求二维数组的和-->
+    function count(arr) {
+        let sum=0;
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<arr[i].length;j++){
+                sum+=arr[i][j];
+            }
+        }
+        document.write('二维数组的和是：'+sum+'</br></br>');
+    }
+    count([[1,2,3,4],[4,4,5,5,64,3],[2,3],[6,64,52]]);
+
+<!--5.求二维数组的最大值-->
+    function Max(arr) {
+        let max=arr[0][0];
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<arr[i].length;j++){
+                if(arr[i][j]>max){
+                    max=arr[i][j];
+                }
+            }
+        }
+        document.write('二维数组的最大值是：'+max+'</br></br>');
+    }
+    Max([[1,2,3,4],[4,4,5,5,64,3],[2,3],[6,64,52]]);
+
+<!--6.复制一个二维数组-->
+    function Copy(arr) {
+        let brr=[];
+        for(let i=0;i<arr.length;i++){
+            brr[i]=[];
+            for(let j=0;j<arr[i].length;j++){
+                brr[i][j]=arr[i][j];
+            }
+        }
+        console.log('复制的二维数组是：'+brr);
+        document.write('复制的二维数组是：'+brr+'</br></br>')
+    }
+    Copy([[1,2,3,4],[4,4,5,5,64,3],[2,3],[6,64,52]]);
+
+<!--7.找出一个数字数组中大于5的个数 -->
+    function Higher5(arr) {
+        let sum=0;
+        for(let i=0;i<arr.length;i++){
+            if(typeof arr[i] == 'number'){
+                if(arr[i]>5){
+                    sum+=1;
+                }
+            }
+        }
+        document.write('大于5的个数是：'+sum+'</br></br>');
+    }
+    Higher5([5,3,3,7,8,5,76,8,5,32,'a']);
+
+<!--8.将大于5的数组成一个新的数组-->
+    function NewArray(arr) {
+        let brr=[];
+        for(let i=0;i<arr.length;i++){
+            if(typeof arr[i] == 'number'){
+                if(arr[i]>5){
+                    brr[brr.length]=arr[i];
+                }
+            }
+        }
+        document.write('大于5的新数组：'+brr+'</br></br>');
+    }
+    NewArray([5,3,3,7,8,5,76,8,5,32,'a']);
+
+<!-- 9.输入一个数字或者字符添加到数组最后-->
+    function AddLast(arr,a) {
+        arr[arr.length]=a;
+        document.write('添加一个数组或者字符添加到数组最后：'+arr+'</br></br>');
+    }
+    AddLast([2,4,5,6,7,8,5,3,54],'a');
+
+<!--10.将数组中的数字内容求和-->
+    function NumSum(arr) {
+        let count=0;
+        for(let i=0;i<arr.length;i++){
+            if(typeof arr[i] =='number'){
+                count+=arr[i];
+            }
+        }
+        document.write('数组中的数字内容和是：'+count+'</br></br>');
+    }
+    NumSum([2,4,5,6,7,8,5,3,54,'a','v']);
+
+<!--11.判断数组中是否所有数字都大于0-->
+    function Higher0(arr) {
+        for(let i=0;i<arr.length;i++){
+            flag='所有数字都大于0';
+            if(arr[i]<0){
+                flag='存在小于0的数';
+                break;
+            }
+            else {
+                flag='所有数字都大于0';
+            }
+        }
+        document.write(flag+'</br></br>');
+    }
+    Higher0([21,3,5,66,33,24,564,4]);
+
+<!--12.合并两个数组-->
+    function Combine(arr,brr) {
+        let crr=[];
+        for(let i=0;i<arr.length;i++){
+            crr[crr.length]=arr[i];
+        }
+        for(let j=0;j<brr.length;j++){
+            crr[crr.length]=brr[j];
+        }
+        document.write('合并后新数组：'+crr+'</br></br>');
+    }
+    Combine([2,3,44,22,75,35,2],[1,2,99,6,'d','f']);
+
+<!--13.找到数组中某一个值的下标-->
+    function Find(arr,a) {
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]==a){
+                document.write(a+'的下标是'+i+'</br></br>');
+            }
+        }
+    }
+    Find([1,2,3,4,5,6,8,8,5,'a'],8)
+
+<!--14.将数组反转-->
+    function Rev(arr) {
+        for(let i=0;i<parseInt(arr.length/2);i++){
+            let tmp=arr[i];
+            arr[i]=arr[arr.length-1-i];
+            arr[arr.length-1-i]=tmp;
+        }
+        document.write(arr+'</br></br>');
+    }
+    Rev([1,3,5,66,32,7,5,3]);
+
+<!--15.移除数组中等于3的元素-->
+    function Del(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == 3) {
+                arr[i] = '';
+            }
+        }
+        document.write(arr+'</br></br>');
+    }
+    Del([1, 23, 4, 5, 4, 3, 3, 5, 4, 4]);
+
+<!--16.删除数组的第一个值-->
+    function DelFirst(arr) {
+        for(let i=1;i<arr.length;i++){
+            arr[i-1]=arr[i];
+        }
+        arr.length-=1;
+        document.write('删除数组第一个值：'+arr+'</br></br>');
+    }
+    DelFirst([1,2,3,3,4,5,5,6,67,7]);
+
+<!--17.在数组的前面添加一个值-->
+    function AddFirst(arr,a) {
+        arr[arr.length]='';
+        for(let i=arr.length-2;i>=0;i--){
+            arr[i+1]=arr[i];
+        }
+        arr[0]=a;
+        document.write('数组前添加一个值：'+arr+'</br></br>');
+    }
+    AddFirst([1,2,3,4,5,6,7,3],'a');
+
+<!--18.封装一个n行n列的表格-->
+    function Form(a,b) {
+        let str="<table width='200px' height='100px' border='1px' cellspacing='0'>";
+        for(let i=1;i<=a;i++){
+            str+="<tr>"
+            for(let j=1;j<=b;j++){
+                str+="<td></td>"
+            }
+            str+="</tr>";
+        }
+        str+="</table>";
+        document.write(str);
+    }
+    Form(3,2);
+
+<!--19.n*n的乘法表-->
+    function Mul(n) {
+        for(let i=1;i<=n;i++){
+            for(let j=1;j<=i;j++){
+                document.write(j+'*'+i+'='+(i*j)+'&nbsp&nbsp&nbsp');
+            }
+            document.write('</br>');
+        }
+    }
+    Mul(7);
+
+<!--20.输入一个数判断是不是质数-->
+    function Prime(n) {
+        if(n==1||n==0){
+            document.write('既不是质数也不是合数');
+        }
+        else {
+            let a='不是质数';
+            for(let i=2;i<n;i++){
+                if(n%i==0){
+                    a='不是质数';
+                    break;
+                }
+                else {
+                    a='是质数';
+                }
+            }
+            document.write(a);
+        }
+    }
+    Prime(6);
+</script>
+
+
+<body></body>
+</html>
