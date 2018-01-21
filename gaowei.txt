@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+//		选择排序
+			function xzpx(arr,type){
+				for(let i=0;i<arr.length;i++){
+					for(let j=i+1;j<arr.length;j++){
+						if(type=='asc'){
+							if(arr[j]<arr[i]){
+								let tmp=arr[i];
+								arr[i]=arr[j];
+								arr[j]=tmp;
+							}
+						}
+						if(type=='desc'){
+							if(arr[j]>arr[i]){
+								let tmp=arr[i];
+								arr[i]=arr[j];
+								arr[j]=tmp;
+							}
+						}
+					}
+				}
+				document.write(arr,"——选择排序<br><br>");
+			}
+		xzpx([2,-2,3,5,9,8,4,17,16],'desc');
+		
+//		冒泡排序
+		function mppx(brr,type){
+			for (let i=0;i<brr.length;i++){
+				for (let j=0;j<brr.length-i-1;j++){
+					if(type=='asc'){
+						if(brr[j]>brr[j+1]){
+							let temp=brr[j];
+							brr[j]=brr[j+i];
+							brr[j+i]=temp;
+						}
+					}
+					if(type=='desc'){
+						if(brr[j]<brr[j+1]){
+							let temp=brr[j];
+							brr[j]=brr[j+i];
+							brr[j+i]=temp;
+						}
+					}
+				}
+			}
+			document.write(brr,"——冒泡排序<br><br>");
+		}
+		mppx([55,-28,3,5,-19,17,16],'asc');
+		
+//		二维数组最长数组
+		function maxlength(crr){
+			let max=crr[0];
+			for(let i=0;i<crr.length;i++){
+				if(max.length<crr[i].length){
+					max=crr[i];
+				}
+			}
+			document.write(max,"——二维数组最长数组<br><br>");
+		}
+		maxlength([[1,2,3],[44,55,66,777],[77,88],['a','b','c']]);
+		
+//		
+		function qiuhe(drr){
+			let sum=0;
+			for(let i=0;i<drr.length;i++){
+				for(let j=0;j<drr[i].length;j++){
+					sum+=drr[i][j];
+				}
+			}
+			document.write(sum,"——求二维数组的和<br><br>")
+		}
+		qiuhe([[1,2,3],[44,55,66,777],[77,88,99]]);
+		
+//		二维数组的最大值
+		function maxnub(err){
+			let maxsz=err[0][0];
+			for(let i=0;i<err.length;i++){
+				for(let j=0;j<err[i].length;j++){
+					if(maxsz<err[i][j]){
+						maxsz=err[i][j];
+					}else{
+						maxsz=maxsz;
+					}
+				}
+			}
+			document.write(maxsz,"——二维数组的最大值<br><br>");
+		}
+		maxnub([[1,2,3],[4444,5555,6666,777],[77,88,99]]);
+		
+//		复制一个二维数组
+		function fuzhi(frr){
+			let kong=[];
+			for(let i=0;i<frr.length;i++){
+				kong[i]=[];
+				for(let j=0;j<frr[i].length;j++){
+					kong[i][j]=frr[i][j];
+				}
+			}
+			document.write(kong,'——复制一个二维数组<br><br>');
+		}
+		fuzhi([["a","b","c"],["A","B","C"]]);
+		
+//		找出大于5的个数
+		function dayuwu(grr){
+			let count=0;
+			for(let i=0;i<grr.length;i++){
+				for(let j=0;j<grr[i].length;j++){
+					if(grr[i][j]>5){
+						count++;
+					}
+				}
+			}
+			document.write(count,"——找出大于5的个数<br><br>")
+		}
+		dayuwu([[1,7,3],[15,-2,6]]);
+		
+//		选出大于5的数,组成新的数组
+		function newhrr(hrr){
+			let newkong=[];
+			for(let i=0;i<hrr.length;i++){
+				for(let j=0;j<hrr[i].length;j++){
+					if(hrr[i][j]>5){
+						newkong[newkong.length]=hrr[i][j];
+					}
+				}
+			}
+			document.write(newkong,"——选出大于5的数,组成新的数组<br><br>");
+		}
+		newhrr([[1,7,3],[16,-2,6]]);
+		
+//		输入字符,添加在最后
+		function tianjia(irr,a){
+			irr[irr.length]=a;
+			document.write(irr,"——输入字符,添加在最后<br><br>");
+		}
+		tianjia([8,86,"as"],"aa");
+		
+//		将数组中数字内容求和
+		function Sum(jrr){
+			let he=0;
+			for(let i=0;i<jrr.length;i++){
+				for(let j=0;j<jrr[i].length;j++){
+					if(typeof jrr[i][j]==='number'){
+						he+=jrr[i][j];	
+					}
+				}
+			}
+			document.write(he,"——将数组中数字内容求和<br><br>");
+		}
+		Sum([["1",7,3],[16,-2,6],[1,"t",5]]);
+		
+//		判断数组中是否所有数字都大于零
+		function zero(krr){
+			let flag="全大于0"
+			for(let i=0;i<krr.length;i++){
+				for(let j=0;j<krr[i].length;j++){
+					if(krr[i][j]<0){
+						flag="不全大于0";
+						continue;
+					}
+				}
+			}
+			document.write(flag,"——判断数组中是否所有数字都大于零<br><br>")
+		}
+		zero([[1,7,3],[16,-2,6]]);
+		
+//		合并两个数组
+		function hbsz(lrr,mrr){
+			for(let i=0;i<lrr.length;i++){
+				mrr[mrr.length]=lrr[i];
+			}	
+			document.write(mrr,"——合并两个数组<br><br>");
+		}
+		hbsz(["a","b","c"],[44,55,66]);
+		
+//		找到数组某一个值的位置
+		function zwz(nrr,b){
+			let wz=0;
+			for(let i=0;i<nrr.length;i++){
+				if(nrr[i]===b){
+					wz=i;
+				}
+			}
+			document.write(wz,"——找到数组某一个值的位置<br><br>");
+		}
+		zwz(["a","b","c","d"],"a");
+		
+//		数组反转
+		function szfz(orr){
+			let neworr=[];
+			for(let i=orr.length-1;i>=0;i--){
+				neworr[neworr.length]=orr[i];
+			}
+			document.write(neworr,"——数组反转<br><br>");
+		}
+		szfz([55,"d",465,"y"]);
+		
+//		移除数组中等于三的元素
+		function ycsan(prr){
+			let newprr=[];
+			for(let i=0;i<prr.length;i++){
+				if(prr[i]===3){
+					continue;
+				}else{
+					newprr[newprr.length]=prr[i];
+				}
+			}
+			document.write(newprr,"——移除数组中等于三的元素<br><br>");
+		}
+		ycsan(["a",5,3,87,3,15]);
+		
+//		删除数组中的第一个值
+		function scfirst(qrr){
+			let newqrr=[];
+			for(let i=0;i<qrr.length;i++){
+				if(i===0){
+					continue;
+				}else{
+					newqrr[newqrr.length]=qrr[i];
+				}
+			}
+			document.write(newqrr,"——删除数组中的第一个值<br><br>")
+		}
+		scfirst([513,51,3135,15]);
+		
+//		在数组前面添加值
+		function qmtj(rrr,c){
+			let newrrr=[];
+			for(let i=0;i<rrr.length;i++){
+				newrrr[i+1]=rrr[i];
+			}
+			newrrr[0]=c;
+			document.write(newrrr,"——在数组前面添加值<br><br>")
+		}
+		qmtj([1,2,3,4,5],"a");
+		
+//		n*m表格
+		function table(n,m){
+			document.write("<table border='1' cellpadding='10' cellspacing='0'>");
+				for(let i=1;i<=n;i++){
+					document.write("<tr bgcolor='aqua'>");
+						for(let j=1;j<=m;j++){
+							document.write("<td bgcolor='aqua'>empty</td>")
+						}
+					document.write("</tr>");
+				}
+			document.write("</table>","<br><br>");
+		}
+		table(5,5);
+		
+//		n*n乘法表
+		function cf(x,y){
+			let product;
+			for(let i=1;i<=x;i++){
+				for(let j=1;j<=y;j++){
+					if(j>i){
+						continue;
+					}
+					product=i*j;
+					document.write(i+'×'+j+'='+product+'&nbsp')
+				}
+				document.write('</br>');
+			}
+			document.write('</br>');
+		}
+		cf(11,11);
+		
+//		是否是质数
+		function sbszs(nub){
+			let pri="质数";
+			for(let i=2;i<nub;i++){
+				if(nub%i==0){
+					pri="合数";
+				}else if(nub===1){
+					pri="既不是质数，也不是合数";
+				}
+			}
+			document.write(pri);
+		}
+		sbszs(7);
+	</script>
+	<body>
+	</body>
+</html>
