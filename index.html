@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+</head>
+<script>
+//选择排序
+//function fun(arr) {
+// for(let i=0;i<arr.length;i++){
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[i]<arr[j]){
+//             let tmp=arr[i];
+//             arr[i]=arr[j];
+//             arr[j]=tmp;
+//         }
+//     }
+// }
+// console.log(arr);
+//}
+//fun([2,5,7,4,8]);
+
+//冒泡排序
+//function fun(arr) {
+//     for(let i=0;i<arr.length-1;i++){
+//         for(j=0;j<arr.length-i-1;j++){
+//             if(arr[j]>arr[j+1]){
+//                 let tmp=arr[j];
+//                 arr[j]=arr[j+1];
+//                 arr[j+1]=tmp;
+//             }
+//         }
+//     }
+//     console.log(arr);
+// }
+// fun([2,5,7,4,8]);
+
+//求二维数组中长度最长的数组
+//function fun(arr) {
+//    let max=arr[0];
+//    for(let i=0;i<arr.length;i++){
+//        if(max.length<arr[i].length){
+//            max=arr[i];
+//        }
+//    }
+//    console.log(max);
+//}
+//fun([[2,5,7,4,8],['a','b']]);
+
+//求一个二维数组的和
+//function arraySum(arr) {
+//     let sum=0;
+//     for(let i=0;i<arr.length;i++){
+//         if(arr[i] instanceof  Array){
+//             for(let j=0;j<arr[i].length;j++){
+//                 sum+=arr[i][j];
+//             }
+//         }else{
+//             sum+=arr[i];
+//         }
+//     }
+//     console.log(sum);
+// }
+// arraySum([2,3,5]);
+
+//求一个二维数组的最大值
+//function fun(arr) {
+//    let max=[0][0];
+//    for(let i=0;i<arr.length;i++){
+//         for(let j=0;j<arr[i].length;j++){
+//             if(arr[i][j]>max){
+//                 max=arr[i][j];
+//              }
+//         }
+//    }
+//console.log(max);
+//}
+//fun([[2,4,3,5],[3,2,4]]);
+
+//复制一个二维数组
+//function fun(arr) {
+//     let brr=[];
+//     for(let i=0;i<arr.length;i++){
+//         brr[i]=[];
+//         for(let j=0;j<arr[i].length;j++){
+//             brr[i][j]=arr[i][j];
+//         }
+//     }
+//console.log(brr);
+//}
+//fun([[2,4,3,5],[3,2,4]]);
+
+//找出一个数字数组大于5的数个数
+//function fun(arr) {
+//     let nub=0;
+//         for(let i=0;i<arr.length;i++){
+//             if(arr[i]>5){
+//                nub++;
+//          }
+//      }
+//console.log(nub);
+//}
+//fun([2,4,3,66,54,33,6]);
+
+//选出数字里的大于5的数，组成一个新的数组
+//function fun(arr) {
+//    let brr=[];
+//    let count=0;
+//    for(let i=0;i<arr.length;i++) {
+//        if (arr[i] > 5) {
+//            count++;
+//            for(let j=count-1;j<count;j++){
+//                brr[j] = arr[i];
+//            }
+//        }
+//    }
+//    console.log(brr);
+//}
+//fun([1,2,2,2,5,5,12,3,12,3,123,6,123]);
+
+//输入一个数字或字符，添加在数组的最后
+//function fun(arr) {
+//    let brr=prompt('请输入一个数');
+//    arr[arr.length]=brr;
+//    console.log(arr);
+//}
+//fun([1,2,2,5,12,3,12,3,123,6,123]);
+
+//将数组中的数字内容求和
+//function fun(arr) {
+//    let sum=0;
+//    for(let i=0;i<arr.length;i++){
+//        sum+=arr[i];
+//    }
+//    console.log(sum);
+//}
+//fun([1,2,2,5,12,3,12,3,123,6,123]);
+
+//判断数组中是否所有数字都大于0
+//function fun(arr) {
+//    let flag='大于0';
+//    for(let i=0;i<arr.length;i++){
+//        if(arr[i]<0){
+//            flag='小于0';
+//            break;
+//        }
+//    }
+//    console.log(flag);
+//}
+//fun([1,2,2,-7,12,3,12,3,123,6,123]);
+
+//合并两个数组
+//function fun(arr,brr) {
+//    let crr=[];
+//    for(let i=0;i<arr.length;i++){
+//        crr[crr.length]=arr[i];
+//    }
+//    for(let i=0;i<brr.length;i++){
+//        crr[crr.length]=brr[i];
+//    }
+//    console.log(crr);
+//}
+//fun([1,2,3,4,5],[6,7,8,9,0]);
+
+//找到数组中某一个值的位置（下标）
+//function fun(arr) {
+//    for(let i=0;i<arr.length;i++){
+//        if(arr[i]===5){
+//            console.log(i);
+//        }
+//    }
+//}
+//fun([1,2,2,5,12,3,12,3,123,6,123]);
+
+//将数组反转
+//function fun(arr) {
+//    let brr=[];
+//    for(i=arr.length-1;i>=0;i--){
+//        brr[brr.length]=arr[i];
+//    }
+//    console.log(brr);
+//}
+//fun([1,2,2,5,12,3,12,3,123,6,123]);
+
+//移除数组中等于3的元素
+//function fun(arr) {
+//    let brr=[];
+//    for(let i=0;i<arr.length;i++){
+//        if(arr[i]==3){
+//            continue;
+//        }
+//        brr[brr.length]=arr[i];
+//    }
+//    console.log(brr);
+//}
+//fun([1,2,2,5,12,3,12,123,6,123]);
+
+//删除数组的第一个值
+//function fun(arr) {
+//    for(let i=1;i<arr.length;i++){
+//        arr[i-1]=arr[i];
+//    }
+//    arr.length=arr.length-1;
+//    console.log(arr);
+//}
+//fun([1,2,2,5,12,3,12,123,6,123]);
+
+//在数组的前面添加一个值
+//function fun(arr) {
+//    for(let i=arr.length-1;i>=0;i--){
+//        arr[i+1]=arr[i];
+//    }
+//    arr[0]='a';
+//    console.log(arr);
+//}
+//fun([1,2,2,5,12,3,12,123,6,123]);
+
+//封装一个n行m列的表格
+//function fun(i) {
+//    let str="<table border='1px' cellpadding='0' cellspacing='0'>";
+//    for(let i=1;i<10;i++) {
+//        str+="<tr>";
+//        for (let j = 0; j < 8; j++) {
+//            if (j % 2 != 0) {
+//                str+="<td>";
+//            }
+//            str+="<td>1</td>";
+//        }
+//        str+="</tr>"
+//    }
+//    str+="</table>"
+//    document.write(str);
+//}
+//fun();
+
+//封装一个n*n的乘法表
+//function fun(i) {
+//    for(let i=1;i<10;i++){
+//        for(let j=1;j<10;j++){
+//            document.write(j+"*"+i+"="+i*j+"&nbsp&nbsp");
+//        }
+//        document.write("</br>");
+//    }
+//}
+//fun();
+
+//输入一个数，判断是不是质数
+//function fun(nub) {
+//    let flag='是质数';
+//    for(let i=2;i<nub;i++){
+//        if(nub%i==0){
+//            flag='不是质数';
+//        }
+//    }
+//    if(nub==1){
+//        console.log('不是质数也不是合数');
+//    }else{
+//        console.log(flag);
+//    }
+//}
+//fun(4);
+
+</script>
+<body>
+
+</body>
+</html>
