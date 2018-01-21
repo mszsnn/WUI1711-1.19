@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20个函数封装</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //选择排序
+    {
+        function xzpx(arr,type='asc'){
+            if(type==='desc'){
+                for(let i=0;i<arr.length;i++){
+                    for(let j=0;j<arr.length-1-i;j++){
+                        if(arr[j]<arr[j+1]){
+                            let tmp=arr[j];
+                            arr[j]=arr[j+1];
+                            arr[j+1]=tmp;
+                        }
+                    }
+                }
+                console.log(arr)
+            }else if(type==='asc'){
+                for(let i=0;i<arr.length;i++){
+                    for(let j=0;j<arr.length-1-i;j++){
+                        if(arr[j]>arr[j+1]){
+                            let tmp=arr[j];
+                            arr[j]=arr[j+1];
+                            arr[j+1]=tmp;
+                        }
+                    }
+                }
+                console.log(arr)
+            }else{
+                console.log('请输入desc或者asc');
+            }
+        }
+        xzpx([32,2,14,77,23,55]);
+    }
+    //冒泡排序
+    {
+        function mppx(arr,type='asc'){
+            if(type==='desc'){
+                for(let i=0;i<arr.length;i++){
+                    for(let j=i+1;j<arr.length;j++){
+                        if(arr[i]<arr[j]){
+                            let tmp=arr[i];
+                            arr[i]=arr[j];
+                            arr[j]=tmp;
+                        }
+                    }
+                }
+                console.log(arr)
+            }else if(type==='asc'){
+                for(let i=0;i<arr.length;i++){
+                    for(let j=i+1;j<arr.length;j++){
+                        if(arr[i]>arr[j]){
+                            let tmp=arr[i];
+                            arr[i]=arr[j];
+                            arr[j]=tmp;
+                        }
+                    }
+                }
+                console.log(arr)
+            }else{
+                console.log('请输入desc或者asc');
+            }
+        }
+        mppx([32,2,14,77,23,55]);
+    }
+    //求一个二维数组中长度最长的数组
+    {
+        function ewlength(arr){
+            let newarr=[];
+            for(let i=0;i<arr.length;i++){
+               for(let j=0;j<arr.length;j++){
+                    if(arr[i].length<arr[j].length){
+                        arr[i]=arr[j];
+                        newarr=arr[i];
+                    }
+               }
+            }
+            console.log(newarr);
+        }
+        ewlength([[1,2,2,2,2],[1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,'a'],[1,null,2,3,null,null,null,null,null,null,null,null,null,null,null],[1,2]])
+    }
+    //求一个二维数组的和
+    {
+        function sum(arr){
+            let sum=0;
+            for(let i=0;i<arr.length;i++){
+                for(let j=0;j<arr[i].length;j++){
+                    if(typeof arr[i][j]==='number'){
+                        sum+=arr[i][j];
+                    }
+                }
+            }
+            console.log(sum);
+        }
+        sum([[1,2,2,2,2],[1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,'a'],[1,null,2,3,null,null,null,null,null,null,null,null,null,null,null],[1,2]])
+    }
+    //求一个二维数组的最大值和最小值
+    {
+        function max(arr,type='da'){
+            if(type==='da'){
+                let max=arr[0][0];
+                for(let i=0;i<arr.length;i++){
+                    for(let j=0;j<arr[i].length;j++){
+                        if(max<arr[i][j]){
+                            max=arr[i][j];
+                        }
+                    }
+                }
+                console.log(max);
+            }else if(type==='xiao'){
+                let min=arr[0][0];
+                for(let i=0;i<arr.length;i++){
+                    for(let j=0;j<arr[i].length;j++){
+                        if(min>arr[i][j]){
+                            min=arr[i][j];
+                        }
+                    }
+                }
+                console.log(min);
+            }
+        }
+        max([[1,2,3],[4,3,6],[0,3,2]],'da');
+    }
+    //复制一个二维数组
+    {
+        function copy(arr){
+            let newarr=[];
+            for(let i=0;i<arr.length;i++){
+                newarr[i]=[];
+                for(let j=0;j<arr[i].length;j++){
+                    newarr[i][j]=arr[i][j];
+                }
+            }
+            console.log(newarr)
+        }
+        copy([[1,2,3],[4,3,6],[0,3,2]])
+    }
+    //找出一个数字数组里面大于n的数，组成一个新的数组
+    {
+        function wu(arr,n='5'){
+            let newarr=[];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]>n){
+                    newarr[newarr.length]=arr[i];
+                }
+            }
+            console.log(newarr);
+        }
+        wu([1,2,3,4,5,6,7,8,8,9],3)
+    }
+    //大于n的个数
+    {
+        function shuliang(arr,n){
+            let count=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]>n){
+                    count++;
+                }
+            }
+            console.log(count);
+        }
+        shuliang([55,23,1,23,13,5,32,45],10)
+    }
+    //输入一个数字或者是字符添加到数组最后
+    {
+        function add(arr,num){
+            arr[arr.length]=num;
+            console.log(arr);
+        }
+        add([1,2,3,4,5,6,7,8,8,9],'a')
+    }
+    //将数组中的数字内容求和
+    {
+        function sum(arr){
+            let sum=0;
+            for(let i=0;i<arr.length;i++){
+                if(typeof arr[i]==='number'){
+                    sum+=arr[i];
+                }
+            }
+            console.log(sum);
+        }
+        sum([1,2,3,4,5,6,7,8,8,9]);
+    }
+    //判断数组中是否所有数字都是大于0
+    {
+        function ling(arr){
+            let flag='大于0';
+            for(let i=0;i<arr.length;i++){
+                if(typeof arr[i]==='number'){
+                    if(arr[i]<0){
+                        flag='不大于0';
+                        break;
+                    }
+                }
+            }
+            console.log(flag)
+        }
+        ling([1,2,3,4,5,6,7,-8,8,9]);
+    }
+    //合并两个数组
+    {
+        function and(arr,arr1){
+            let newarr=[];
+            for(let i=0;i<arr.length;i++){
+                newarr[newarr.length]=arr[i];
+            }
+            for(let j=0;j<arr1.length;j++){
+                newarr[newarr.length]=arr1[j];
+            }
+            console.log(newarr);
+        }
+        and([1,2,3,4],[5,6,7,8])
+    }
+    //找到数组中某一个值的所有下标
+    {
+        function index(arr,n){
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]===n){
+                    console.log(i)
+                }
+            }
+        }
+        index([12,3,3,2,13,12,3,4,12],12)
+    }
+    //将数组反转
+    {
+        function fanzhuan(arr){
+            let newarr=[];
+            for(let i=arr.length-1;i>=0;i--){
+                newarr[newarr.length]=arr[i];
+            }
+            console.log(newarr);
+        }
+        fanzhuan([1,2,3,4,5,6,3,32,1]);
+    }
+    //移除数组中等于3的元素
+    {
+        function move(arr,n){
+            let newarr=[];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]!==n){
+                    newarr[newarr.length]=arr[i];
+                }
+            }
+            console.log(newarr);
+        }
+        move([1,2,3,4,5,6,3,2,1,2,4,5,3],2)
+    }
+    //删除数组中的第一个值
+    {
+        function moveone(arr){
+            let newarr=[];
+            for(let i=0;i<arr.length;i++){
+                if(i!==0){
+                    newarr[newarr.length]=arr[i];
+                }
+            }
+            console.log(newarr);
+        }
+        moveone([1,2,3,4,5,6,7])
+    }
+    //在数组的前面添加一个值
+    {
+        function addone(arr,num){
+            for(let i=arr.length-1;i>=0;i--){
+               arr[i+1]=arr[i]
+            }
+            arr[0]=num;
+            console.log(arr)
+        }
+        addone([1,2,3,4,5,6,7],0);
+    }
+    //封装一个n行m列的表格
+    {
+        function table(n,m){
+            let table='<table border="1" cellspacing="0" cellpadding="0">';
+            for(let i=1;i<=n;i++){
+                table+='<tr>';
+                for(let j=1;j<=m;j++){
+                    table+='<td width="50" height="50"></td>';
+                }
+            }
+            document.write(table)
+        }
+        table(10,10)
+    }
+    //封装n*n的乘法表
+    {
+        function chengfa(n){
+            let table='<table border="1" cellspacing="0" cellpadding="0">';
+            for(let i=1;i<=n;i++){
+                table+='<tr>';
+                for(let j=1;j<=i;j++){
+                    table+="<td width='50' height='25'>"+j+'*'+i+'='+i*j+"</td>";
+                }
+            }
+            document.write(table);
+        }
+        chengfa(100);
+    }
+    //输入一个数是不是质数
+    {
+        function zhishu(num){
+            let flag='是质数';
+            for(let i=2;i<num;i++){
+                if(num%i===0){
+                    flag='不是质数';
+                }
+            }
+            console.log(flag);
+        }
+        zhishu(97);
+    }
+</script>
