@@ -1,1 +1,273 @@
- https://yyjl34.github.io/hanshu/ ������
+ https://yyjl34.github.io/hanshu/ 岳佳丽
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>封装作业</title>
+</head>
+<body>
+<script>
+//  1、选择排序
+//     function xuan(arr) {
+//         for(let i=0;i<arr.length;i++){
+//             for(let j=i+1;j<arr.length;j++){
+//                 if(arr[i]>arr[j]){
+//                     let tmp=arr[i];
+//                     arr[i]=arr[j];
+//                     arr[j]=tmp;
+//                 }
+//             }
+//         }
+//         console.log(arr);
+//     }
+//    xuan([1,5,8,10]);
+
+ //2、冒泡排序
+//     function mao(arr,type='asc') {
+//          for(let i=0;i<arr.length;i++) {
+//              for (let j = 0; j < arr.length - i - 1; j++) {
+//                  if (type == 'asc') {
+//                      if (arr[j] > arr[j + 1]) {
+//                          let tmp = arr[j];
+//                          arr[j] = arr[j + 1];
+//                          arr[j + 1] = tmp;
+//                      }
+//                  } else {
+//                      if (arr[j] < arr[j + 1]) {
+//                          let tmp = arr[j];
+//                          arr[j] = arr[j + 1];
+//                          arr[j + 1] = tmp;
+//                      }
+//                  }
+//              }
+//          }
+//          console.log(arr);
+//      }
+//      mao(arr=[2,5,1,0,6,3,4],'asc');
+
+//3、求二维数组中长度最长的数组
+//    function maxlen(arr) {
+//        let a=0;
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr[i].length;j++){
+//                let max=0;
+//                if(arr[i].length>max){
+//                    max=arr[i].length;
+//                    a=j;
+//                }
+//            }
+//        }
+//        console.log(arr[a]);
+//
+//    }
+//    maxlen([[1,2,3],[2,3,4,5],[2,3]]);
+
+//4、求一个二维数组的和
+//    function add(arr) {
+//        let sum=0;
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr[i].length;j++){
+//                sum+=arr[i][j];
+//            }
+//        }
+//        console.log(sum);
+//    }
+//    add([[1,2,3],[2,3,4,5],[2,3]]);
+
+//5、求一个二维数组的最大值
+//    function maxnub(arr) {
+//        let max=0;
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr[i].length;j++){
+//                if(arr[i][j]>max){
+//                    max=arr[i][j];
+//                }
+//            }
+//        }console.log(max);
+//    }
+//    maxnub([[1,2,3],[2,3,4,5],[2,3]]);
+
+//6、复制一个二维数组
+//    function copy(arr) {
+//        let brr=[];
+//        for(let i=0;i<arr.length;i++){
+//                brr[i]=[];
+//            for(let j=0;j<arr[i].length;j++){
+//                brr[i][j]=arr[i][j];
+//            }
+//        }
+//        console.log(brr);
+//
+//    }
+//    copy([[1,2,3],[2,3,4,5],[2,3]]);
+
+//7、找出一个数字数组大于5的个数
+//    function dayu(arr) {
+//        let count=0;
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]>5){
+//                count++;
+//            }
+//        }console.log(count);
+//    }
+//    dayu([12,3,5,7,8,3,9,10]);
+
+//8、选出数组里大于5的数组成一个新的数组
+//    function xin(arr) {
+ //        let brr=[];
+ //        for(let i=0;i<arr.length;i++){
+ //            if(arr[i]>5){
+ //                brr[brr.length]=arr[i];
+ //            }
+ //        }console.log(brr);
+ //
+ //    }
+ //    xin([12,3,5,7,8,3,9,10]);
+//9、输入一个数字或者字符添加到数组最后
+//    function add(arr) {
+//        let a=prompt('请输入一个数字或者字符');
+//        arr[arr.length]=a;
+//        console.log(arr);
+//    }
+//    add([12,3,5,7,8,3,9,10]);
+
+//10、将数组中的数字内容求和
+//    function adsum(arr) {
+//        let sum=0;
+//        for(let i=0;i<arr.length;i++){
+//            sum+=arr[i];
+//        }console.log(sum);
+//    }
+//    adsum([12,3,5,7,8,3,9,10])
+
+//11、判断数组中是否所有数字都大于0
+//    function panduan(arr) {
+ //        let flag='都大于0';
+ //        for(let i=0;i<arr.length;i++){
+ //            if(arr[i]<=0){
+ //                flag='不全大于0'
+ //            }
+ //        }console.log(flag);
+ //
+ //    }
+ //    panduan([12,3,5,7,8,3,9,10,0]);
+
+//12、合并两个数组
+//    function hebing(arr,brr) {
+//        let crr=[];
+//        for(let i=0;i<arr.length;i++){
+//            crr[crr.length]=arr[i];
+//        }
+//        for(let j=0;j<brr.length;j++){
+//            crr[crr.length]=brr[j];
+//        }console.log(crr);
+//    }
+//    hebing([12,3,4,5],[3,5,6]);
+
+//13、找到数组中某一个位置的下标
+//    function find(arr,a) {
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]===a){
+//                console.log(a);
+//            }
+//        }
+//
+//
+//    }
+//    find([12,3,4,5],3);
+
+//14、将数组反转
+//    function fanzhuan(arr) {
+//        let brr=[];
+//        for(let i=arr.length-1;i>=0;i--){
+//            brr[brr.length]=arr[i];
+//        }
+//        console.log(brr);
+//    }
+//    fanzhuan([12,3,4,5]);
+
+//15、移除数组中等于3的元素
+//    function yichu(arr) {
+//        let brr=[];
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]===3){
+//                continue;
+//            }else {
+//                brr[brr.length]=arr[i];
+//            }
+//        }
+//        console.log(brr);
+//
+//    }
+//    yichu([12,3,4,5,3,7,3,8]);
+
+//16、删除数组的第一个值
+//    function shanchu(arr) {
+ //        for(let i=1;i<arr.length;i++){
+ //             arr[i-1]=arr[i];
+ //        }
+ //        arr.length=arr.length-1;
+ //        console.log(arr);
+ //    }
+ //    shanchu([12,3,4,5,3,7,3,8])
+
+//17、在数组的前面添加一个值
+//    function tianjia(arr) {
+ //        for(let i=arr.length-1;i>=0;i--){
+ //           arr[i+1]=arr[i];
+ //        }
+ //        arr[0]='abc';
+ //        console.log(arr);
+ //    }
+ //    tianjia([12,3,4,5,3,7,3,8])
+
+//18、封装一个n行m列的表格
+//    function biaoge(str,n,m) {
+//        str='<table border="1px" cellspacing="0" cellpadding="0">'
+//       for(let i=1;i<=n;i++){
+//           str+='<tr>';
+//           for(let j=1;j<=m;j++){
+//               str+='<td></td>'
+//           }
+//           str+='</tr>';
+//       }
+//        str+='</table>';
+//        document.write(str);
+//    }
+//    biaoge('<table></table>',10,10);
+
+//19、封装一个n*n的乘法表
+//     function chengfabiao(n,n) {
+//         for(let i=1;i<=n;i++){
+//             for(let j=1;j<=i;j++){
+//                 document.write(i+'x'+j+'='+i*j+'  ');
+//             }
+//             document.write('<br>');
+//         }
+//     }
+//     chengfabiao(10,10);
+
+//20、输入一个数判断是不是质数
+//     function zhishu(flag) {
+//         let a=prompt('请输入一个数');
+//         for(let i=2;i<a;i++){
+//             if(a%i==0){
+//                 flag='不是质数';
+//                 break;
+//             }
+//         }
+//         if(a==1){
+//             console.log('不是质数也不是合数');
+//         }else{
+//             console.log(flag);
+//         }
+//     }
+//     zhishu('是质数');
+
+
+</script>
+</body>
+</html>
