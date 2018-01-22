@@ -26,19 +26,27 @@ function bupple(arr,type='asc') {
 }
 
 //选择排序
-function xuanze(arr) {
+function xuanze(arr,type='asc') {
     for (let i=0;i<arr.length-1;i++) {
         for (let j=i;j<arr.length;j++) {
-            if(arr[j]>arr[j+1]){
-                let min=arr[j+1];
-                arr[j+1]=arr[j];
-                arr[j]=min;
+            if (type=='asc') {
+                if (arr[j]>arr[i]) {
+                    let tmp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = tmp;
+                }
+            }
+            else if (type=='desc') {             
+                if (arr[j] < arr[i]) {
+                    let tmp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = tmp;
+                }
             }
         }
     }
     console.log(arr);
 }
-
 //求得一个二维数组中，长度最长的数组
 function chang(arr) {
     let max=arr[0];
